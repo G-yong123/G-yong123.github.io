@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-12-04T09:19:29.057Z</updated>
+  <updated>2018-12-17T06:26:39.550Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>写在前面</title>
+    <link href="http://yoursite.com/2018/12/17/%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2-1/"/>
+    <id>http://yoursite.com/2018/12/17/写在前面-1/</id>
+    <published>2018-12-17T03:11:11.000Z</published>
+    <updated>2018-12-17T06:26:39.550Z</updated>
+    
+    <content type="html"><![CDATA[<p>从事java开发的学习和编码的相关工作已经近三年了，一直在编写代码上秉承着不求甚解，说是为了提高开发效率，使得有更多的时间可以进行编码，实际上是给自己的懒惰找到一个说辞.最近越发的感觉到被同时期的小伙伴超越，感觉是时候得逼一把自己.然后想把这个记录一下，后期自己再回头看，肯定是有一定的帮助.另外写博客的一些好处，可以通过这篇 <a href="https://www.cnblogs.com/jhzhu/p/3893297.html" target="_blank" rel="noopener">博客</a> 了解到.这个个人博客网站是一八年七月份就已经搭好的，后面一直拖延到一八年的十二月才又开始想起来，然后加油吧，骚年！！！</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;从事java开发的学习和编码的相关工作已经近三年了，一直在编写代码上秉承着不求甚解，说是为了提高开发效率，使得有更多的时间可以进行编码，实际上是给自己的懒惰找到一个说辞.最近越发的感觉到被同时期的小伙伴超越，感觉是时候得逼一把自己.然后想把这个记录一下，后期自己再回头看，肯
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
