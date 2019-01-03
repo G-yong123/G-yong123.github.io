@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-12-21T07:13:01.078Z</updated>
+  <updated>2019-01-03T10:01:16.165Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SpringCloud学习第一天</title>
+    <link href="http://yoursite.com/2019/01/03/SpringCloud%E5%AD%A6%E4%B9%A0%E7%AC%AC%E4%B8%80%E5%A4%A9/"/>
+    <id>http://yoursite.com/2019/01/03/SpringCloud学习第一天/</id>
+    <published>2019-01-03T03:12:59.000Z</published>
+    <updated>2019-01-03T10:01:16.165Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="记录学习"><a href="#记录学习" class="headerlink" title="记录学习"></a>记录学习</h3><p>分布式： 将一个大的项目工程，拆分为多个子项目，每个项目通过rpc远程调用技术进行实现。</p><p>集群：解决单个服务器压力问题，将一个项目相同的功能部署在不同的服务器上，解决高并发问题</p><p>SpringCloud: 提供分布式的解决方案，springcloud主要的实现组件有<br>eureka（注册中心），<br>ribbon（客户端负载均衡），<br>feign（集成eureka和ribbon的负载均衡的http客户端），<br>hystrix(断路器），<br>config（配置中心组件），<br>zuul（网关），<br>bus（消息总线），<br>nginx（服务器端负载均衡）</p><p>总体概括：SpringCloud是提供分布式的解决方案，将系统拆分为多个子系统，每个子系统负责独立的功能模块，大的流程走向为服务注册==&gt;服务提供者==&gt;服务消费者，后两项服务提供者，服务消费者都是通过在注册中心进行分配的，服务生产者、消费者都是通过注册中心的服务列表进行访问的</p><h5 id="eureka"><a href="#eureka" class="headerlink" title="eureka"></a>eureka</h5><ul><li>springcloud的注册中心，将普通的springboot项目注册到Eureka Server中，或者从Eureka Server中获取服务列表 ,只需在应用主类中配置@EnableDisconveryClient注解，在配置文件application.properties中用eureka.client.serviceUrl.defaultZone参数指定注册中心位置</li></ul><h5 id="ribbon"><a href="#ribbon" class="headerlink" title="ribbon"></a>ribbon</h5><ul><li>从eureka注册中心服务器上获取服务注册信息列表，缓存到本地，然后在本地实现轮询负载均衡策略。即在客户端实现负载均衡。Ribbon是一个基于Http和Tcp客户端的负载均衡，它可以在客户端配置ribbonServerList（服务端列表），然后轮询请求以实现均衡负载。通过@RibbonClient注解实现。</li></ul><h5 id="feign"><a href="#feign" class="headerlink" title="feign"></a>feign</h5><ul><li>Feign是对ribbon的改进，采用接口方式，通过@FeignClient注解在抽象接口中使用声明，将需要调用的其他服务的方法定义成抽象方法即可，不需要自己构建http请求。抽象方法的注解、方法签名要和提供服务的方法完全一致。</li></ul><h5 id="hystrix"><a href="#hystrix" class="headerlink" title="hystrix"></a>hystrix</h5><ul><li>在分布式系统内，许多依赖不可避免的会调用失败，如超时、异常等，保证一个依赖出问题的情况下，不会导致整个服务失败。一个用户的请求,肯定依赖许多的服务，如果没有隔离，单个依赖的失败可能会影响其他依赖的正常执行。</li></ul><h5 id="config"><a href="#config" class="headerlink" title="config"></a>config</h5><ul><li>分布式系统中的每个功能模块都能拆分独立的服务，springcloud config是方便服务配置文件统一管理，更易于部署、维护。配置中心组件支持配置文件放在配置服务的内存中，也支持放在远程git仓库中，再新建一个config server,用来管理所有的配置文件，维护时需要更改配置时，只需要本地更改后，推送到远程仓库。所有服务实例都可以通过config server来获取配置文件。这时每个服务实例就相当于配置服务的客户端config client。可以实现不重启的情况下更新配置。</li></ul><h5 id="zuul"><a href="#zuul" class="headerlink" title="zuul"></a>zuul</h5><ul><li>网关，zuul的核心是一系列的filters，其作用可以类比Servlet框架中的Filter，或者AOP。Zuul把request route到用户处理逻辑的过程中，这些filter参与一些过滤处理，比如Authentication，Load Shedding等。作用于验证与安全保障，审查与监控，动态路由，压力测试，负载分配，静态响应处理，多区域弹性。</li></ul><h5 id="bus"><a href="#bus" class="headerlink" title="bus"></a>bus</h5><ul><li>通过实现消息队列发布订阅模型，让所有的服务来订阅这个事件，当这个事件发生改变，就可以触发所有的微服务。支持RabbitMQ，Kafka等。</li></ul><h5 id="nginx"><a href="#nginx" class="headerlink" title="nginx"></a>nginx</h5><ul><li>是一种基于REST架构风格的开源的，高性能的http和反向代理web服务器，同时也是IMAP、POP3、SMTP代理服务器。nginx可以作为一个http服务器进行网站发布处理，另外nginx可以作为反向代理进行负载均衡的实现。</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;记录学习&quot;&gt;&lt;a href=&quot;#记录学习&quot; class=&quot;headerlink&quot; title=&quot;记录学习&quot;&gt;&lt;/a&gt;记录学习&lt;/h3&gt;&lt;p&gt;分布式： 将一个大的项目工程，拆分为多个子项目，每个项目通过rpc远程调用技术进行实现。&lt;/p&gt;
+&lt;p&gt;集群：解决单个服务器
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>写在前面</title>
